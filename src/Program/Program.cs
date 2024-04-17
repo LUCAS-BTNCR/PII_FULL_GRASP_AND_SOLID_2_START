@@ -1,10 +1,4 @@
-﻿//-------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Universidad Católica del Uruguay">
-// Copyright (c) Programación II. Derechos reservados.
-// </copyright>
-//-------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Linq;
 using Full_GRASP_And_SOLID.Library;
@@ -14,7 +8,6 @@ namespace Full_GRASP_And_SOLID
     public class Program
     {
         private static ArrayList productCatalog = new ArrayList();
-
         private static ArrayList equipmentCatalog = new ArrayList();
 
         public static void Main(string[] args)
@@ -25,7 +18,9 @@ namespace Full_GRASP_And_SOLID
             recipe.FinalProduct = GetProduct("Café con leche");
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
-            recipe.PrintRecipe();
+            
+            // Llamamos al método PrintRecipe de la clase ConsolePrinter
+            ConsolePrinter.PrintRecipe(recipe);
         }
 
         private static void PopulateCatalogs()
@@ -71,3 +66,4 @@ namespace Full_GRASP_And_SOLID
         }
     }
 }
+
